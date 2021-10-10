@@ -1,11 +1,19 @@
 // table 数组
 let table_arr = [];
-
 // 选择的 td
 let select_td_arr = [];
 // 起止位置
 let start_end_data = {};
+// table元素
 let table = null;
+
+// 用于判断是否相同的 td
+let tr_td = "";
+// 起止 td 下标
+let tr_num = 0;
+let td_num = 0;
+
+let isMouseDown = false;
 
 //初始化选取框
 export function initSelectArea(el) {
@@ -39,66 +47,130 @@ export function initTable(el, columns, fn) {
   initTableArr();
   setTdSpan(table_arr, columns);
   // 拖拽选取
-  document.onmousedown = (e) => {
-    const { scrollLeft, scrollTop } = document.scrollingElement;
-    let start_left = e.clientX + scrollLeft;
-    let start_top = e.clientY + scrollTop;
-    // 用于判断是否相同的 td
-    let tr_td = "";
-    // 起止 td 下标
-    let tr_num = 0;
-    let td_num = 0;
-    const { left, top } = table.getBoundingClientRect();
-    switchTd(
-      {
-        x: start_left - (document.documentElement.scrollLeft + left),
-        y: start_top - (document.documentElement.scrollTop + top),
-      },
-      (ind_data) => {
-        tr_num = ind_data.tr_ind;
-        td_num = ind_data.td_ind;
-        // if (tr_num === 0 || td_num === 0) return;
-        collisionCell({
-          tr_num,
-          td_num,
-          tr_ind: ind_data.end_tr_ind,
-          td_ind: ind_data.end_td_ind,
-        });
-        tr_td = ind_data.td.dataset.tdspan;
-      }
-    );
-    document.onmousemove = (e1) => {
-      e1.preventDefault();
-      const { scrollLeft, scrollTop } = document.scrollingElement;
-      let move_left = e1.clientX + scrollLeft;
-      let move_top = e1.clientY + scrollTop;
-      const { left, top } = table.getBoundingClientRect();
-      switchTd(
-        {
-          x: move_left - (document.documentElement.scrollLeft + left),
-          y: move_top - (document.documentElement.scrollTop + top),
-        },
-        (ind_data) => {
-          // if (tr_num === 0 || td_num === 0) return;
-          if (tr_td === ind_data.td.dataset.tdspan) return;
-          collisionCell({
-            tr_num,
-            td_num,
-            tr_ind: ind_data.end_tr_ind,
-            td_ind: ind_data.end_td_ind,
-          });
-          tr_td = ind_data.td.dataset.tdspan;
-        }
-      );
-    };
-  };
-  document.onmouseup = () => {
-    document.onmousemove = null;
-    setSelectTdArr();
-    fn && fn(select_td_arr);
-    console.log(start_end_data);
-    console.log(select_td_arr);
-  };
+  // document.onmousedown = (e) => {
+  //   const { scrollLeft, scrollTop } = document.scrollingElement;
+  //   let start_left = e.clientX + scrollLeft;
+  //   let start_top = e.clientY + scrollTop;
+  //   // 用于判断是否相同的 td
+  //   tr_td = "";
+  //   // 起止 td 下标
+  //   tr_num = 0;
+  //   td_num = 0;
+  //   const { left, top } = table.getBoundingClientRect();
+  //   switchTd(
+  //     {
+  //       x: start_left - (document.documentElement.scrollLeft + left),
+  //       y: start_top - (document.documentElement.scrollTop + top),
+  //     },
+  //     (ind_data) => {
+  //       tr_num = ind_data.tr_ind;
+  //       td_num = ind_data.td_ind;
+  //       // if (tr_num === 0 || td_num === 0) return;
+  //       collisionCell({
+  //         tr_num,
+  //         td_num,
+  //         tr_ind: ind_data.end_tr_ind,
+  //         td_ind: ind_data.end_td_ind,
+  //       });
+  //       tr_td = ind_data.td.dataset.tdspan;
+  //     }
+  //   );
+  //   document.onmousemove = (e1) => {
+  //     e1.preventDefault();
+  //     const { scrollLeft, scrollTop } = document.scrollingElement;
+  //     let move_left = e1.clientX + scrollLeft;
+  //     let move_top = e1.clientY + scrollTop;
+  //     const { left, top } = table.getBoundingClientRect();
+  //     switchTd(
+  //       {
+  //         x: move_left - (document.documentElement.scrollLeft + left),
+  //         y: move_top - (document.documentElement.scrollTop + top),
+  //       },
+  //       (ind_data) => {
+  //         // if (tr_num === 0 || td_num === 0) return;
+  //         if (tr_td === ind_data.td.dataset.tdspan) return;
+  //         collisionCell({
+  //           tr_num,
+  //           td_num,
+  //           tr_ind: ind_data.end_tr_ind,
+  //           td_ind: ind_data.end_td_ind,
+  //         });
+  //         tr_td = ind_data.td.dataset.tdspan;
+  //       }
+  //     );
+  //   };
+  // };
+  // document.onmouseup = () => {
+  //   document.onmousemove = null;
+  //   setSelectTdArr();
+  //   fn && fn(select_td_arr);
+  //   console.log(start_end_data);
+  //   console.log(select_td_arr);
+  // };
+}
+
+export function onMouseDown(e, mouseState) {
+  isMouseDown = mouseState;
+  const { scrollLeft, scrollTop } = document.scrollingElement;
+  let start_left = e.clientX + scrollLeft;
+  let start_top = e.clientY + scrollTop;
+  // 用于判断是否相同的 td
+  let tr_td = "";
+  // 起止 td 下标
+  let tr_num = 0;
+  let td_num = 0;
+  const { left, top } = table.getBoundingClientRect();
+  switchTd(
+    {
+      x: start_left - (document.documentElement.scrollLeft + left),
+      y: start_top - (document.documentElement.scrollTop + top),
+    },
+    (ind_data) => {
+      tr_num = ind_data.tr_ind;
+      td_num = ind_data.td_ind;
+      // if (tr_num === 0 || td_num === 0) return;
+      collisionCell({
+        tr_num,
+        td_num,
+        tr_ind: ind_data.end_tr_ind,
+        td_ind: ind_data.end_td_ind,
+      });
+      tr_td = ind_data.td.dataset.tdspan;
+    }
+  );
+}
+
+export function onMouseMove(e) {
+  if (isMouseDown === false) return;
+  const { scrollLeft, scrollTop } = document.scrollingElement;
+  let move_left = e.clientX + scrollLeft;
+  let move_top = e.clientY + scrollTop;
+  const { left, top } = table.getBoundingClientRect();
+  switchTd(
+    {
+      x: move_left - (document.documentElement.scrollLeft + left),
+      y: move_top - (document.documentElement.scrollTop + top),
+    },
+    (ind_data) => {
+      // if (tr_num === 0 || td_num === 0) return;
+      if (tr_td === ind_data.td.dataset.tdspan) return;
+      collisionCell({
+        tr_num,
+        td_num,
+        tr_ind: ind_data.end_tr_ind,
+        td_ind: ind_data.end_td_ind,
+      });
+      tr_td = ind_data.td.dataset.tdspan;
+    }
+  );
+}
+
+export function onMouseUp(fn, mouseState) {
+  isMouseDown = mouseState;
+  setSelectTdArr();
+  fn && fn(select_td_arr);
+  console.log(start_end_data);
+  console.log(select_td_arr);
 }
 
 // 逻辑部分

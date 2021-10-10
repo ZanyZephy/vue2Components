@@ -1,16 +1,5 @@
 <template>
   <div>
-    <!-- <BasicTable
-      :columns="columns"
-      :data="tableData"
-      :pagination="pagination"
-      ref="table"
-    >
-      <el-table-column label="姓名" prop="name"></el-table-column>
-      <el-table-column label="年龄" prop="age"></el-table-column>
-      <el-table-column label="性别" prop="sex"></el-table-column>
-    </BasicTable>
-    <EditTable></EditTable> -->
     <el-table
       :row-key="getRowKey"
       :data="getData"
