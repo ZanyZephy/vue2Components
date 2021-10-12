@@ -924,6 +924,11 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@handsontable/vue@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.npmmirror.com/@handsontable/vue/download/@handsontable/vue-10.0.0.tgz#1aa73d6b39cbf033416a38bf25dc0b7f889d441d"
+  integrity sha1-Gqc9aznL8DNBaji/JdwLf4idRB0=
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.nlark.com/@hapi/address/download/@hapi/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -1108,6 +1113,13 @@
   version "2.4.1"
   resolved "https://registry.nlark.com/@types/normalize-package-data/download/@types/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha1-0zV0eaD9/dWQf+Z+F+CoXJBuEwE=
+
+"@types/pikaday@1.7.4":
+  version "1.7.4"
+  resolved "https://registry.nlark.com/@types/pikaday/download/@types/pikaday-1.7.4.tgz?cache=0&sync_timestamp=1629708768287&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fpikaday%2Fdownload%2F%40types%2Fpikaday-1.7.4.tgz#aa41f928f0f5af31a4a656f471a78177a9260abf"
+  integrity sha1-qkH5KPD1rzGkplb0caeBd6kmCr8=
+  dependencies:
+    moment ">=2.14.0"
 
 "@types/q@^1.5.1":
   version "1.5.5"
@@ -2498,6 +2510,11 @@ big.js@^5.2.2:
   resolved "https://registry.nlark.com/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
 
+bignumber.js@^8.0.1:
+  version "8.1.1"
+  resolved "https://registry.npm.taobao.org/bignumber.js/download/bignumber.js-8.1.1.tgz#4b072ae5aea9c20f6730e4e5d529df1271c4d885"
+  integrity sha1-Swcq5a6pwg9nMOTl1SnfEnHE2IU=
+
 binary-extensions@^1.0.0:
   version "1.13.1"
   resolved "https://registry.nlark.com/binary-extensions/download/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
@@ -2902,6 +2919,13 @@ check-types@^8.0.3:
   version "8.0.3"
   resolved "https://registry.nlark.com/check-types/download/check-types-8.0.3.tgz#3356cca19c889544f2d7a95ed49ce508a0ecf552"
   integrity sha1-M1bMoZyIlUTy16le1JzlCKDs9VI=
+
+chevrotain@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.npmmirror.com/chevrotain/download/chevrotain-6.5.0.tgz#dcbef415516b0af80fd423cc0d96b28d3f11374e"
+  integrity sha1-3L70FVFrCvgP1CPMDZayjT8RN04=
+  dependencies:
+    regexp-to-ast "0.4.0"
 
 "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.1:
   version "3.5.2"
@@ -3310,6 +3334,11 @@ core-js@^2.4.0:
   version "2.6.12"
   resolved "https://registry.nlark.com/core-js/download/core-js-2.6.12.tgz?cache=0&sync_timestamp=1628444146107&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-js%2Fdownload%2Fcore-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha1-2TM9+nsGXjR8xWgiGdb2kIWcwuw=
+
+core-js@^3.0.0, core-js@^3.6.4:
+  version "3.18.2"
+  resolved "https://registry.npmmirror.com/core-js/download/core-js-3.18.2.tgz?cache=0&sync_timestamp=1633458698338&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcore-js%2Fdownload%2Fcore-js-3.18.2.tgz#63a551e8a29f305cd4123754846e65896619ba5b"
+  integrity sha1-Y6VR6KKfMFzUEjdUhG5liWYZuls=
 
 core-js@^3.16.0, core-js@^3.6.5:
   version "3.16.1"
@@ -3840,6 +3869,11 @@ domhandler@^4.0.0, domhandler@^4.2.0:
   integrity sha1-+XaKXwNL5gqJonwuTQ9066DYsFk=
   dependencies:
     domelementtype "^2.2.0"
+
+dompurify@^2.1.1:
+  version "2.3.3"
+  resolved "https://registry.nlark.com/dompurify/download/dompurify-2.3.3.tgz?cache=0&sync_timestamp=1632141221951&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdompurify%2Fdownload%2Fdompurify-2.3.3.tgz#c1af3eb88be47324432964d8abc75cf4b98d634c"
+  integrity sha1-wa8+uIvkcyRDKWTYq8dc9LmNY0w=
 
 domutils@^1.7.0:
   version "1.7.0"
@@ -4888,6 +4922,20 @@ handle-thing@^2.0.0:
   resolved "https://registry.npm.taobao.org/handle-thing/download/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"
   integrity sha1-hX95zjWVgMNA1DCBzGSJcNC7I04=
 
+handsontable@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.npmmirror.com/handsontable/download/handsontable-10.0.0.tgz#f9607d23a8f532d647c433c05793863125df1af1"
+  integrity sha1-+WB9I6j1MtZHxDPAV5OGMSXfGvE=
+  dependencies:
+    "@types/pikaday" "1.7.4"
+    core-js "^3.0.0"
+    dompurify "^2.1.1"
+    moment "2.24.0"
+    numbro "2.1.2"
+    pikaday "1.8.0"
+  optionalDependencies:
+    hyperformula "^1.2.0"
+
 har-schema@^2.0.0:
   version "2.0.0"
   resolved "https://registry.nlark.com/har-schema/download/har-schema-2.0.0.tgz#a94c2224ebcac04782a0d9035521f24735b7ec92"
@@ -5195,6 +5243,17 @@ human-signals@^1.1.1:
   version "1.1.1"
   resolved "https://registry.nlark.com/human-signals/download/human-signals-1.1.1.tgz?cache=0&sync_timestamp=1624364695595&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhuman-signals%2Fdownload%2Fhuman-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
+
+hyperformula@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmmirror.com/hyperformula/download/hyperformula-1.2.0.tgz#e0115fe415e21fb2fa9beb287077c66f420cb3f1"
+  integrity sha1-4BFf5BXiH7L6m+socHfGb0IMs/E=
+  dependencies:
+    chevrotain "^6.5.0"
+    core-js "^3.6.4"
+    regenerator-runtime "^0.13.3"
+    tiny-emitter "^2.1.0"
+    unorm "^1.6.0"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
@@ -6319,6 +6378,16 @@ mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@^0.5.5, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+moment@2.24.0:
+  version "2.24.0"
+  resolved "https://registry.nlark.com/moment/download/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
+
+moment@>=2.14.0:
+  version "2.29.1"
+  resolved "https://registry.nlark.com/moment/download/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha1-sr52n6MZQL6e7qZGnAdeNQBvo9M=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.nlark.com/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -6571,6 +6640,13 @@ num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.nlark.com/num2fraction/download/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
+
+numbro@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.nlark.com/numbro/download/numbro-2.1.2.tgz#2d51104f09b5d69aef7e15bb565d7795e47ecfd6"
+  integrity sha1-LVEQTwm11prvfhW7Vl13leR+z9Y=
+  dependencies:
+    bignumber.js "^8.0.1"
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -6985,6 +7061,11 @@ pify@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npm.taobao.org/pify/download/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha1-SyzSXFDVmHNcUCkiJP2MbfQeMjE=
+
+pikaday@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.npm.taobao.org/pikaday/download/pikaday-1.8.0.tgz#ce930e257042e852e6aadee1115e01554b2d71c5"
+  integrity sha1-zpMOJXBC6FLmqt7hEV4BVUstccU=
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -7670,7 +7751,7 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.nlark.com/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz?cache=0&sync_timestamp=1626993001371&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha1-vgWtf5v30i4Fb5cmzuUBf78Z4uk=
 
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
+regenerator-runtime@^0.13.3, regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.9"
   resolved "https://registry.nlark.com/regenerator-runtime/download/regenerator-runtime-0.13.9.tgz?cache=0&sync_timestamp=1626993001371&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha1-iSV0Kpj/2QgUmI11Zq0wyjsmO1I=
@@ -7698,6 +7779,11 @@ regex-not@^1.0.0, regex-not@^1.0.2:
   dependencies:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
+
+regexp-to-ast@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.nlark.com/regexp-to-ast/download/regexp-to-ast-0.4.0.tgz#f3dbcb42726cd71902ba50193f63eab5325cd7cb"
+  integrity sha1-89vLQnJs1xkCulAZP2PqtTJc18s=
 
 regexp.prototype.flags@^1.2.0:
   version "1.3.1"
@@ -8783,6 +8869,11 @@ timsort@^0.3.0:
   resolved "https://registry.nlark.com/timsort/download/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
+tiny-emitter@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.nlark.com/tiny-emitter/download/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+  integrity sha1-HRpW7fxRxD6GPLtTgqcjMONVVCM=
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.nlark.com/tmp/download/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -9013,6 +9104,11 @@ universalify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.nlark.com/universalify/download/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
+
+unorm@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npm.taobao.org/unorm/download/unorm-1.6.0.tgz#029b289661fba714f1a9af439eb51d9b16c205af"
+  integrity sha1-ApsolmH7pxTxqa9DnrUdmxbCBa8=
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

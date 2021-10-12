@@ -13,9 +13,6 @@
       v-bind="$attrs"
       @cell-click="onCellClick"
       @cell-dblclick="onCellDblClick"
-      @mousedown.native="(e) => onMouseDown(e, true)"
-      @mousemove.native="(e) => onMouseMove(e)"
-      @mouseup.native="() => onMouseUp(onSelect, false)"
     >
       <template #default="data">
         <BasicColumn
@@ -67,13 +64,7 @@
 import BasicColumn from "./BasicColumn.vue";
 import EditTable from "./src/components/edit-table/index.js";
 import { get, set } from "lodash-es";
-import {
-  initTable,
-  initSelectArea,
-  onMouseDown,
-  onMouseMove,
-  onMouseUp,
-} from "./sel-cell";
+import { initTable, initSelectArea } from "./sel-cell";
 export default {
   inheritAttrs: false,
   components: {
@@ -184,12 +175,6 @@ export default {
 
   //方法兼容
   methods: {
-    onMouseDown,
-    onMouseMove,
-    onMouseUp,
-    onSelect(e) {
-      console.log(e);
-    },
     //双击单元格，进入编辑状态
     onCellDblClick(row, column, cell, event) {
       const classList = Array.from(cell.classList);
@@ -347,7 +332,7 @@ export default {
   outline: none;
   user-select: none;
   z-index: 999;
-  background-color: red;
+  background-color:red;
 }
 .elTable ::v-deep .active:before {
   content: "";
