@@ -60,20 +60,3 @@ export function genKey(pKey, days) {
     pKey.substr(20, 5),
   ].join("-");
 }
-import Handsontable from "handsontable";
-export const drawCheckboxInRowHeaders = function drawCheckboxInRowHeaders(
-  row,
-  TH
-) {
-  const input = document.createElement("input");
-
-  input.type = "checkbox";
-
-  if (row >= 0 && this.getDataAtRowProp(row, "0")) {
-    input.checked = true;
-  }
-
-  Handsontable.dom.empty(TH);
-
-  TH.appendChild(input);
-};

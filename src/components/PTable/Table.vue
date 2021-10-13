@@ -2,8 +2,8 @@
   <div>
     <!-- 表格主体 -->
     <template v-if="writable">
-      <HotTable ref="hotTableComponent" :data="getData" :settings="hotSettings">
-        <template v-for="(column, index) in columns">
+      <HotTable :key="hotKey" :data="getData" :settings="hotSettings">
+        <template v-for="(column, index) in getColumns">
           <HotColumn
             :title="column.label"
             :data="column.prop"
@@ -106,17 +106,17 @@ export default {
       hotSettings: {
         width: "99.9%",
         height: "300px",
-        colWidths: 100,
-        colWidths: [50, 100, 200, 400],
+        // colWidths: 100,
+        // colWidths: [50, 100, 200, 400],
         rowHeights: 35,
         manualColumnResize: true,
         className: "custom-table htMiddle",
         // afterGetRowHeader: drawCheckboxInRowHeaders,
         // rowHeaders: true,
-        // nestedHeaders: [
-        //   ["名字", "日期", "地址", { label: "个人信息", colspan: 2 }],
-        //   ["名字", "日期", "地址", "姓名", "日期"],
-        // ],
+        nestedHeaders: [
+          ["姓名", "日期", "地址", { label: "个人信息", colspan: 2 }],
+          [null, null, null, "姓名", "日期"],
+        ],
         stretchH: "all",
         manualRowMove: true,
         licenseKey: genKey(), //生成注册码
@@ -146,7 +146,6 @@ export default {
   },
   computed: {
     getData() {
-      this.$refs.hotTableComponent.hotInstance.loadData([["new", "data"]]);
       if (this.paginationConf.total === 0) {
         const { currentPage, pageSize } = this.paginationConf;
         return this.data.slice(
@@ -167,47 +166,62 @@ export default {
       }
     },
   },
-  // watch: {
-  //   getData: {
-  //     handler: function () {
-  //       console.log(99);
-  //       this.hotKey++;
-  //       console.log(this.columns);
-  //       // console.log(this.hotKey);
-  //     },
-  //   },
-  // },
+  watch: {
+    getData: {
+      handler: function () {
+        console.log(99);
+        this.hotKey++;
+        console.log(this.columns);
+        // console.log(this.hotKey);
+      },
+    },
+  },
   mounted() {
+    window.onresize = () => {
+      console.log("933");
+      this.hotKey++;
+    };
     console.log(this.createHeader(this.columns));
+    console.log(this.getColumns(this.columns));
     // this.hotSettings.nestedHeaders = this.createHeader(this.columns);
   },
   //方法兼容
   methods: {
-    //获取级数
-    getLevel(children) {
-      let level = 1;
-      if (Array.isArray(children) && children.length > 0) {
-        level++;
-        level = this.getLevel(children);
-      } else {
-        return level;
-      }
-    },
-    //生成表头
-    createHeader(columns, fill = 0) {
-      const headers = [[]];
-      for (let i = 0; i < fill; i++) {
-        headers[0].push(null);
-      }
-      for (let i = 0; i < columns.length; i++) {
-        const { children, label } = columns[i];
+    getColumns(columns) {
+      const list = [];
+      for (const { children, label } of columns) {
         if (Array.isArray(children) && children.length > 0) {
-          headers[0].push({ label: label, colspan: children.length });
-          headers.push(...this.createHeader(children, 3));
+          list.push(...this.getColumns(children));
         } else {
-          headers[0].push(label);
+          list.push(label);
         }
       }
+      return list;
+    },
+    //生成表头
+    createHeader(columns) {
+      const headers = columns.reduce((acc, cur, idx, src) => {
+        const { children, label } = cur;
+        if (Array.isArray(children) && children.length > 0) {
+          
+        } else {
+          acc.push(label);
+        }
+      }, []);
+      // const headers = [];
+      // for (const { children, label } of columns) {
+      //   if (Array.isArray(children) && children.length > 0) {
+      //     const column = { label: label, colspan: children.length };
+      //     headers[level]
+      //       ? headers[level].push(column)
+      //       : (headers[level] = [column]);
+      //     level++;
+      //     headers.push(...this.createHeader(children, level));
+      //   } else {
+      //     level = 0;
+      //     headers[level] ? headers[level].push(label) : (headers[level] = []);
+      //   }
+      // }
       return headers;
     },
     clearSelection() {
