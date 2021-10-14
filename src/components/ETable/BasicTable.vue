@@ -24,6 +24,7 @@
     </el-table>
     <!-- 分页 -->
     <el-row
+      :style="{ marginTop: '10px' }"
       type="flex"
       :justify="getPaginationConf.position"
       v-if="getPaginationConf !== false"
@@ -96,10 +97,10 @@ export default {
         disabled: false,
         hideOnSinglePage: false,
         position: "end",
-        onSizeChange: () => {},
-        onCurrentChange: () => {},
-        onPrevClick: () => {},
-        onNextClick: () => {},
+        onSizeChange: () => { },
+        onCurrentChange: () => { },
+        onPrevClick: () => { },
+        onNextClick: () => { },
       },
     };
   },

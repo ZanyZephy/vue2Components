@@ -18,7 +18,7 @@
       :enableBrowserTooltips="true"
     >
     </ag-grid-vue>
-    <DTable ref="dtable"></DTable>
+    <DTable ref="dtable" :height="390"></DTable>
     <el-button type="primary" @click="onChange">点我</el-button>
   </div>
 </template>
