@@ -12,7 +12,10 @@
 		"vite-build": "vite build"
 	},
 	"dependencies": {
+		"@ag-grid-enterprise/all-modules": "^26.1.0",
 		"@handsontable/vue": "^10.0.0",
+		"ag-grid-community": "^26.1.0",
+		"ag-grid-vue": "^26.1.0",
 		"core-js": "^3.6.5",
 		"element-ui": "^2.15.5",
 		"global": "^4.4.0",
@@ -20,6 +23,7 @@
 		"lodash-es": "^4.17.21",
 		"stylus-loader": "^6.1.0",
 		"vue": "^2.6.11",
+		"vue-property-decorator": "^8.0.0",
 		"vue-router": "^3.2.0",
 		"vuex": "^3.4.0",
 		"wp2vite": "^2.0.5",

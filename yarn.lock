@@ -2,6 +2,219 @@
 # yarn lockfile v1
 
 
+"@ag-grid-community/all-modules@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/all-modules/download/@ag-grid-community/all-modules-26.1.0.tgz#0d593ecdf0af51020583c7b00bb0f98a484d2ceb"
+  integrity sha1-DVk+zfCvUQIFg8ewC7D5ikhNLOs=
+  dependencies:
+    "@ag-grid-community/client-side-row-model" "~26.1.0"
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-community/csv-export" "~26.1.0"
+    "@ag-grid-community/infinite-row-model" "~26.1.0"
+
+"@ag-grid-community/client-side-row-model@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/client-side-row-model/download/@ag-grid-community/client-side-row-model-26.1.0.tgz#af935ce30582a174b26b5a4d6358b7ba4cebefdf"
+  integrity sha1-r5Nc4wWCoXSya1pNY1i3ukzr798=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+
+"@ag-grid-community/core@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/core/download/@ag-grid-community/core-26.1.0.tgz#2632b54d671f83e0bb843e5d2f3cef255567289a"
+  integrity sha1-JjK1TWcfg+C7hD5dLzzvJVVnKJo=
+
+"@ag-grid-community/csv-export@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/csv-export/download/@ag-grid-community/csv-export-26.1.0.tgz#5bf14f982859f18866721750baf140a2044770f7"
+  integrity sha1-W/FPmChZ8YhmchdQuvFAogRHcPc=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+
+"@ag-grid-community/infinite-row-model@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/infinite-row-model/download/@ag-grid-community/infinite-row-model-26.1.0.tgz#b0bfb405098ba11e90800ae929fe86693ef4ff2b"
+  integrity sha1-sL+0BQmLoR6QgArpKf6GaT70/ys=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+
+"@ag-grid-enterprise/all-modules@^26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/all-modules/download/@ag-grid-enterprise/all-modules-26.1.0.tgz#c3ae40dd3888037f1381f4062d1b5987d7f18798"
+  integrity sha1-w65A3TiIA38TgfQGLRtZh9fxh5g=
+  dependencies:
+    "@ag-grid-community/all-modules" "~26.1.0"
+    "@ag-grid-enterprise/charts" "~26.1.0"
+    "@ag-grid-enterprise/clipboard" "~26.1.0"
+    "@ag-grid-enterprise/column-tool-panel" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+    "@ag-grid-enterprise/excel-export" "~26.1.0"
+    "@ag-grid-enterprise/filter-tool-panel" "~26.1.0"
+    "@ag-grid-enterprise/master-detail" "~26.1.0"
+    "@ag-grid-enterprise/menu" "~26.1.0"
+    "@ag-grid-enterprise/multi-filter" "~26.1.0"
+    "@ag-grid-enterprise/range-selection" "~26.1.0"
+    "@ag-grid-enterprise/rich-select" "~26.1.0"
+    "@ag-grid-enterprise/row-grouping" "~26.1.0"
+    "@ag-grid-enterprise/server-side-row-model" "~26.1.0"
+    "@ag-grid-enterprise/set-filter" "~26.1.0"
+    "@ag-grid-enterprise/side-bar" "~26.1.0"
+    "@ag-grid-enterprise/sparklines" "~26.1.0"
+    "@ag-grid-enterprise/status-bar" "~26.1.0"
+    "@ag-grid-enterprise/viewport-row-model" "~26.1.0"
+
+"@ag-grid-enterprise/charts@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/charts/download/@ag-grid-enterprise/charts-26.1.0.tgz#4a11155d62cda2a7613ec4f42ada0bcc9f50f41d"
+  integrity sha1-ShEVXWLNoqdhPsT0KtoLzJ9Q9B0=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+    "@ag-grid-enterprise/range-selection" "~26.1.0"
+    ag-charts-community "~4.1.0"
+
+"@ag-grid-enterprise/clipboard@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/clipboard/download/@ag-grid-enterprise/clipboard-26.1.0.tgz#2381f42164fcd8672dae50b502fbea315b14e936"
+  integrity sha1-I4H0IWT82GctrlC1AvvqMVsU6TY=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-community/csv-export" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/column-tool-panel@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/column-tool-panel/download/@ag-grid-enterprise/column-tool-panel-26.1.0.tgz#3d03b3459726b40e3472f16a9a7eed22be64b32d"
+  integrity sha1-PQOzRZcmtA40cvFqmn7tIr5ksy0=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+    "@ag-grid-enterprise/row-grouping" "~26.1.0"
+    "@ag-grid-enterprise/side-bar" "~26.1.0"
+
+"@ag-grid-enterprise/core@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/core/download/@ag-grid-enterprise/core-26.1.0.tgz#ee09fa90bfcb809b64c91a138cef25c9c636d64e"
+  integrity sha1-7gn6kL/LgJtkyRoTjO8lycY21k4=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+
+"@ag-grid-enterprise/excel-export@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/excel-export/download/@ag-grid-enterprise/excel-export-26.1.0.tgz#f24fc3885d1fb02daafb3d0aac57903bd1cda84f"
+  integrity sha1-8k/DiF0fsC2q+z0KrFeQO9HNqE8=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-community/csv-export" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/filter-tool-panel@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/filter-tool-panel/download/@ag-grid-enterprise/filter-tool-panel-26.1.0.tgz#bec8a6c553bbef5f5cef26d5614dbe7c8c31e1dc"
+  integrity sha1-vsimxVO7719c7ybVYU2+fIwx4dw=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+    "@ag-grid-enterprise/side-bar" "~26.1.0"
+
+"@ag-grid-enterprise/master-detail@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/master-detail/download/@ag-grid-enterprise/master-detail-26.1.0.tgz#d6de9111fdb8a2daab5ad5d2584b992322ac8209"
+  integrity sha1-1t6REf24otqrWtXSWEuZIyKsggk=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/menu@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/menu/download/@ag-grid-enterprise/menu-26.1.0.tgz#1a0ee081a8bd6519690a467ad0f0965d8ea90992"
+  integrity sha1-Gg7ggai9ZRlpCkZ60PCWXY6pCZI=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/column-tool-panel" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/multi-filter@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/multi-filter/download/@ag-grid-enterprise/multi-filter-26.1.0.tgz#1329b7e79285fe5f16b9127630e7482796a05ad2"
+  integrity sha1-Eym355KF/l8WuRJ2MOdIJ5agWtI=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+    "@ag-grid-enterprise/menu" "~26.1.0"
+
+"@ag-grid-enterprise/range-selection@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/range-selection/download/@ag-grid-enterprise/range-selection-26.1.0.tgz#951e6dd0cf82f4edfab3acd1c5bdbf226354547e"
+  integrity sha1-lR5t0M+C9O36s6zRxb2/ImNUVH4=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/rich-select@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/rich-select/download/@ag-grid-enterprise/rich-select-26.1.0.tgz#b04003dbec2c63c112851bb35307211eac6e37cc"
+  integrity sha1-sEAD2+wsY8EShRuzUwchHqxuN8w=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/row-grouping@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/row-grouping/download/@ag-grid-enterprise/row-grouping-26.1.0.tgz#af58bee51de81958dafde4085022dacc49d80efd"
+  integrity sha1-r1i+5R3oGVja/eQIUCLazEnYDv0=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/server-side-row-model@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/server-side-row-model/download/@ag-grid-enterprise/server-side-row-model-26.1.0.tgz#7b1c5653956b9beb5356d7bb580aae8156a7de68"
+  integrity sha1-exxWU5Vrm+tTVte7WAqugVan3mg=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/set-filter@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/set-filter/download/@ag-grid-enterprise/set-filter-26.1.0.tgz#35a6d8b40328cf8eea66cab3ca9212b3240a95ba"
+  integrity sha1-NabYtAMoz47qZsqzypISsyQKlbo=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/side-bar@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/side-bar/download/@ag-grid-enterprise/side-bar-26.1.0.tgz#e31897aac098d65a8adcaa6b074d07b52c688418"
+  integrity sha1-4xiXqsCY1lqK3KprB00HtSxohBg=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/sparklines@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/sparklines/download/@ag-grid-enterprise/sparklines-26.1.0.tgz#3213de969910ea0da07224e16f6b1e5bc7cb48b7"
+  integrity sha1-MhPelpkQ6g2gciThb2seW8fLSLc=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/status-bar@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/status-bar/download/@ag-grid-enterprise/status-bar-26.1.0.tgz#c09f5c9827fb6d9e6b8a0bbf888120a1ede57f3b"
+  integrity sha1-wJ9cmCf7bZ5rigu/iIEgoe3lfzs=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
+"@ag-grid-enterprise/viewport-row-model@~26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-enterprise/viewport-row-model/download/@ag-grid-enterprise/viewport-row-model-26.1.0.tgz#36a0ba62e33612085495f0026bffa148f4b166ff"
+  integrity sha1-NqC6YuM2EghUlfACa/+hSPSxZv8=
+  dependencies:
+    "@ag-grid-community/core" "~26.1.0"
+    "@ag-grid-enterprise/core" "~26.1.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.14.5":
   version "7.14.5"
   resolved "https://registry.nlark.com/@babel/code-frame/download/@babel/code-frame-7.14.5.tgz?cache=0&sync_timestamp=1623280394200&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.14.5.tgz#23b08d740e83f49c5e59945fbf1b43e80bbf4edb"
@@ -1682,6 +1895,21 @@ adler-32@~1.2.0:
   dependencies:
     exit-on-epipe "~1.0.1"
     printj "~1.1.0"
+
+ag-charts-community@~4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/ag-charts-community/download/ag-charts-community-4.1.0.tgz#4fbf37d6d3bff50a59e91d48393651dcae2d58a7"
+  integrity sha1-T7831tO/9QpZ6R1IOTZR3K4tWKc=
+
+ag-grid-community@^26.1.0:
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/ag-grid-community/download/ag-grid-community-26.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fag-grid-community%2Fdownload%2Fag-grid-community-26.1.0.tgz#d4ee3e9591b351a5ae477a21dd3dc44491ccd7fa"
+  integrity sha1-1O4+lZGzUaWuR3oh3T3ERJHM1/o=
+
+ag-grid-vue@^26.1.0:
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/ag-grid-vue/download/ag-grid-vue-26.1.0.tgz#d01406ebf20354f425c0d0dc9383368d1a44ee8e"
+  integrity sha1-0BQG6/IDVPQlwNDck4M2jRpE7o4=
 
 ajv-errors@^1.0.0:
   version "1.0.1"
@@ -9308,6 +9536,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.nlark.com/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
+vue-class-component@^7.1.0:
+  version "7.2.6"
+  resolved "https://registry.npm.taobao.org/vue-class-component/download/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
+  integrity sha1-hHHgN7jkdi9aRkaG4Z5a/HCFAuQ=
+
 vue-eslint-parser@^7.0.0:
   version "7.10.0"
   resolved "https://registry.nlark.com/vue-eslint-parser/download/vue-eslint-parser-7.10.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue-eslint-parser%2Fdownload%2Fvue-eslint-parser-7.10.0.tgz#ea4e4b10fd10aa35c8a79ac783488d8abcd29be8"
@@ -9345,6 +9578,13 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-property-decorator@^8.0.0:
+  version "8.5.1"
+  resolved "https://registry.nlark.com/vue-property-decorator/download/vue-property-decorator-8.5.1.tgz#571a91cf8d2b507f537d79bf8275af3184572fff"
+  integrity sha1-VxqRz40rUH9TfXm/gnWvMYRXL/8=
+  dependencies:
+    vue-class-component "^7.1.0"
 
 vue-router@^3.2.0:
   version "3.5.2"

@@ -111,12 +111,25 @@ export default {
         rowHeights: 35,
         manualColumnResize: true,
         className: "custom-table htMiddle",
+        colHeaders: this.createHeader(this.columns),
+        cells: (row, column, prop) => {
+          this.columns[column].readonly = () => (row, column, prop);
+          // const currentRow = this.data[row];
+          // this.cellsBack(currentRow, prop);
+          // if (visualRowIndex === 0 && visualColIndex === 0) {
+          //   cellProperties.readOnly = true;
+          // }
+
+          // return cellProperties;
+        },
         // afterGetRowHeader: drawCheckboxInRowHeaders,
         // rowHeaders: true,
-        nestedHeaders: [
-          ["姓名", "日期", "地址", { label: "个人信息", colspan: 2 }],
-          [null, null, null, "姓名", "日期"],
-        ],
+        // nestedHeaders: [
+        //   ["姓名", "日期", "地址", { label: "个人信息", colspan: 2 }],
+        //   [null, null, null, "姓名", "日期"],
+        // ],
+        allowInsertColumn: false, //不允许插入列
+        allowInsertRow: false, //不允许插入行
         stretchH: "all",
         manualRowMove: true,
         licenseKey: genKey(), //生成注册码
@@ -200,28 +213,14 @@ export default {
     },
     //生成表头
     createHeader(columns) {
-      const headers = columns.reduce((acc, cur, idx, src) => {
-        const { children, label } = cur;
+      const headers = [];
+      for (const { children, label } of columns) {
         if (Array.isArray(children) && children.length > 0) {
-          
+          headers.push(...this.createHeader(children));
         } else {
-          acc.push(label);
+          headers.push(label);
         }
-      }, []);
-      // const headers = [];
-      // for (const { children, label } of columns) {
-      //   if (Array.isArray(children) && children.length > 0) {
-      //     const column = { label: label, colspan: children.length };
-      //     headers[level]
-      //       ? headers[level].push(column)
-      //       : (headers[level] = [column]);
-      //     level++;
-      //     headers.push(...this.createHeader(children, level));
-      //   } else {
-      //     level = 0;
-      //     headers[level] ? headers[level].push(label) : (headers[level] = []);
-      //   }
-      // }
+      }
       return headers;
     },
     clearSelection() {
