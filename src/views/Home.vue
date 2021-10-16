@@ -16,9 +16,10 @@
       :rowData="rowData"
       :modules="AllModules"
       :enableBrowserTooltips="true"
+      :enableFillHandle="true"
     >
     </ag-grid-vue>
-    <DTable ref="dtable" :height="390"></DTable>
+    <!-- <DTable ref="dtable" :height="390" @select-change="onSelect"> </DTable> -->
     <el-button type="primary" @click="onChange">点我</el-button>
   </div>
 </template>
@@ -32,7 +33,7 @@ export default {
   components: {
     // PTable,
     AgGridVue,
-    DTable,
+    // DTable,
   },
   beforeMount() {
     this.columnDefs = [
@@ -48,10 +49,32 @@ export default {
     ];
   },
   methods: {
+    onSelect(value, index) {
+      console.log(value, index);
+    },
+    handleEdit(index, value) {
+      console.log(index, value);
+    },
+    // api(params) {
+    //   fetch("http://jsonplaceholder.typicode.com/posts?_page=1&_limit=2")
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((myJson) => {
+    //       console.log(myJson);
+    //       this.tableData = myJson;
+    //     });
+    // },
     onChange(e) {
       this.$refs.dtable.open({
         title: "测试",
         api: "",
+        columns: [
+          { type: "selection" },
+          { label: "ID", prop: "id" },
+          { label: "标题", prop: "title" },
+          { label: "文章", prop: "body" },
+        ],
       });
     },
     getData() {

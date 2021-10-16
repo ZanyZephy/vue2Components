@@ -97,11 +97,12 @@ export default {
         disabled: false,
         hideOnSinglePage: false,
         position: "end",
-        onSizeChange: () => { },
-        onCurrentChange: () => { },
-        onPrevClick: () => { },
-        onNextClick: () => { },
+        onSizeChange: () => {},
+        onCurrentChange: () => {},
+        onPrevClick: () => {},
+        onNextClick: () => {},
       },
+      elTable: this.$refs.elTable,
     };
   },
   computed: {
