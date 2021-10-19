@@ -14,21 +14,18 @@
       @first-data-rendered="onFirstDataRendered"
       @cell-value-changed="onCellValueChanged"
       :enableCellChangeFlash="true"
-      :modules="AllModules"
     ></ag-grid-vue>
   </div>
 </template>
 
 <script>
 import { AgGridVue } from "ag-grid-vue";
-import { AllModules } from "@ag-grid-enterprise/all-modules";
 export default {
   components: {
     "ag-grid-vue": AgGridVue,
   },
   data() {
     return {
-      AllModules,
       columnDefs: [
         { field: "a" },
         { field: "b" },
@@ -49,7 +46,7 @@ export default {
   },
   beforeMount() {
     this.rowData = this.getRows();
-    console.log(this.rowData)
+    console.log(this.rowData);
   },
   methods: {
     getRows() {

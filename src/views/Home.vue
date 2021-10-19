@@ -17,6 +17,7 @@
       :modules="AllModules"
       :enableBrowserTooltips="true"
       :enableFillHandle="true"
+      :localeTextFunc="localeTextFunc"
     >
     </ag-grid-vue>
     <!-- <DTable ref="dtable" :height="390" @select-change="onSelect"> </DTable> -->
@@ -49,6 +50,10 @@ export default {
     ];
   },
   methods: {
+    localeTextFunc(key, defaultValue) {
+      console.log(key, defaultValue);
+      return defaultValue ? defaultValue.toUpperCase() : "";
+    },
     onSelect(value, index) {
       console.log(value, index);
     },
