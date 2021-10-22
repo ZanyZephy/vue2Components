@@ -14,20 +14,45 @@
       @first-data-rendered="onFirstDataRendered"
       @cell-value-changed="onCellValueChanged"
       :enableCellChangeFlash="true"
+
     ></ag-grid-vue>
+          <!-- :localeText="{
+        pinColumn: 'Pin 9999',
+        pinLeft: 'Pin Left',
+        pinRight: 'Pin Right',
+        noPin: 'No Pin',
+      }" -->
   </div>
 </template>
 
 <script>
-import { AgGridVue } from "ag-grid-vue";
+// import { AgGridVue } from "@ag-grid-community/vue";
+// import { Grid, GridOptions } from '@ag-grid-community/core';
+
 export default {
   components: {
-    "ag-grid-vue": AgGridVue,
+    // 'ag-grid-vue': AgGridVue
   },
   data() {
     return {
       columnDefs: [
-        { field: "a" },
+        {
+          field: "a", editable: function (e) {
+            if (e.data.b === 'b-1') {
+              return false;
+            } else {
+              return true
+            }
+          }, cellStyle: function (params) {
+            // console.log(params)
+            if (params.value == 'a-1') {
+              console.log('999')
+              //mark police cells as red
+              return { color: 'red', backgroundColor: 'green' };
+            }
+            return null;
+          }
+        },
         { field: "b" },
         { field: "c" },
         { field: "d" },
@@ -45,8 +70,8 @@ export default {
     };
   },
   beforeMount() {
+    // console.log(Grid, GridOptions)
     this.rowData = this.getRows();
-    console.log(this.rowData);
   },
   methods: {
     getRows() {
@@ -63,11 +88,11 @@ export default {
         };
       });
     },
-    onFirstDataRendered() {},
-    onCellValueChanged() {},
-    undo() {},
-    redo() {},
-    onGridReady() {},
+    onFirstDataRendered() { },
+    onCellValueChanged() { },
+    undo() { },
+    redo() { },
+    onGridReady() { },
   },
 };
 </script>

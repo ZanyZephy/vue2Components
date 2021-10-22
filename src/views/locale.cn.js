@@ -1,11 +1,11 @@
 // Example locale file for English, give this to your locale team to translate
-const AG_GRID_LOCALE_EN = {
+export default {
   // Set Filter
-  selectAll: "(Select All)",
-  selectAllSearchResults: "(Select All Search Results)",
-  searchOoo: "Search...",
-  blanks: "(Blanks)",
-  noMatches: "No matches",
+  selectAll: "(全选)",
+  selectAllSearchResults: "(选择所有搜索结果)",
+  searchOoo: "搜索...",
+  blanks: "（空白）",
+  noMatches: "没有匹配项",
 
   // Number Filter & Text Filter
   filterOoo: "Filter...",
@@ -69,10 +69,10 @@ const AG_GRID_LOCALE_EN = {
   enabled: "Enabled",
 
   // Menu
-  pinColumn: "Pin Column",
-  pinLeft: "Pin Left",
-  pinRight: "Pin Right",
-  noPin: "No Pin",
+  pinColumn: "固定在右侧",
+  pinLeft: "Pin 固定在右侧",
+  pinRight: "Pin 固定在右侧",
+  noPin: "No 固定在右侧",
   valueAggregation: "Value Aggregation",
   autosizeThiscolumn: "Autosize This Column",
   autosizeAllColumns: "Autosize All Columns",

@@ -38,6 +38,11 @@
   dependencies:
     "@ag-grid-community/core" "~26.1.0"
 
+"@ag-grid-community/vue@^26.1.0":
+  version "26.1.0"
+  resolved "https://registry.npmmirror.com/@ag-grid-community/vue/download/@ag-grid-community/vue-26.1.0.tgz#0c80f29186af3bd381cda54dd794f28f8fbae313"
+  integrity sha1-DIDykYavO9OBzaVN15Tyj4+64xM=
+
 "@ag-grid-enterprise/all-modules@^26.1.0":
   version "26.1.0"
   resolved "https://registry.npmmirror.com/@ag-grid-enterprise/all-modules/download/@ag-grid-enterprise/all-modules-26.1.0.tgz#c3ae40dd3888037f1381f4062d1b5987d7f18798"
@@ -1900,16 +1905,6 @@ ag-charts-community@~4.1.0:
   version "4.1.0"
   resolved "https://registry.npmmirror.com/ag-charts-community/download/ag-charts-community-4.1.0.tgz#4fbf37d6d3bff50a59e91d48393651dcae2d58a7"
   integrity sha1-T7831tO/9QpZ6R1IOTZR3K4tWKc=
-
-ag-grid-community@^26.1.0:
-  version "26.1.0"
-  resolved "https://registry.npmmirror.com/ag-grid-community/download/ag-grid-community-26.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fag-grid-community%2Fdownload%2Fag-grid-community-26.1.0.tgz#d4ee3e9591b351a5ae477a21dd3dc44491ccd7fa"
-  integrity sha1-1O4+lZGzUaWuR3oh3T3ERJHM1/o=
-
-ag-grid-vue@^26.1.0:
-  version "26.1.0"
-  resolved "https://registry.npmmirror.com/ag-grid-vue/download/ag-grid-vue-26.1.0.tgz#d01406ebf20354f425c0d0dc9383368d1a44ee8e"
-  integrity sha1-0BQG6/IDVPQlwNDck4M2jRpE7o4=
 
 ajv-errors@^1.0.0:
   version "1.0.1"
