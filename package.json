@@ -12,10 +12,9 @@
 		"vite-build": "vite build"
 	},
 	"dependencies": {
+		"@ag-grid-community/vue": "^26.1.0",
 		"@ag-grid-enterprise/all-modules": "^26.1.0",
 		"@handsontable/vue": "^10.0.0",
-		"ag-grid-community": "^26.1.0",
-		"ag-grid-vue": "^26.1.0",
 		"core-js": "^3.6.5",
 		"element-ui": "^2.15.5",
 		"global": "^4.4.0",
