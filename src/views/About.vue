@@ -21,7 +21,7 @@
 
 <script>
 import { AgGridVue } from "ag-grid-vue";
-import { AllModules } from "@ag-grid-enterprise/all-modules";
+import { AllModules } from "@/components/@ag-grid-enterprise/all-modules";
 export default {
   components: {
     "ag-grid-vue": AgGridVue,
