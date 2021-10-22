@@ -1,19 +1,19 @@
 // Example locale file for English, give this to your locale team to translate
 const AG_GRID_LOCALE_EN = {
-  // 设置过滤器
+  // Set Filter
   selectAll: "(全选)",
   selectAllSearchResults: "(选择所有搜索结果)",
   searchOoo: "搜索...",
   blanks: "（空白）",
   noMatches: "没有匹配项",
 
-  // 数字过滤器和文本过滤器
+  // Number Filter & Text Filter
   filterOoo: "过滤器...",
   equals: "等于",
   notEqual: "不相等",
   empty: "选择一个",
 
-  // 数字过滤器
+  // Number Filter
   lessThan: "小于",
   greaterThan: "大于",
   lessThanOrEqual: "小于或等于",
@@ -22,36 +22,36 @@ const AG_GRID_LOCALE_EN = {
   inRangeStart: "从",
   inRangeEnd: "到",
 
-  // 文本过滤器
+  // Text Filter
   contains: "包含",
   notContains: "不包含",
   startsWith: "开始于",
   EndsWith: "结束于",
 
-  // 日期过滤器
+  // Date Filter
   dateFormatOoo: "yyyy-mm-dd",
 
-  // 过滤条件
+  // Filter Conditions
   andCondition: "AND",
   orCondition: "或",
 
-  // 过滤按钮
+  // Filter Buttons
   applyFilter: "申请",
   resetFilter: "重置",
   clearFilter: "清除",
   cancelFilter: "取消",
 
-  // 过滤标题
+  // Filter Titles
   textFilter: "文本过滤器",
   numberFilter: "数字过滤器",
   dateFilter: "日期过滤器",
   setFilter: "设置过滤器",
 
-  // 侧边栏
+  // Side Bar
   columns: "列",
   filters: "过滤器",
 
-  // 列工具面板
+  // columns tool panel
   pivotMode: "枢轴模式",
   groups: "行组",
   rowGroupColumnsEmptyMessage: "拖动此处设置行组",
@@ -60,15 +60,15 @@ const AG_GRID_LOCALE_EN = {
   pivots: "列标签",
   pivotColumnsEmptyMessage: "拖动此处设置列标签",
 
-  // 默认组列的标题
+  // Header of the Default Group Column
   group: "组",
 
-  // 其他
+  // Other
   loadingOoo: "正在加载...",
   noRowsToShow: "没有要显示的行",
   enabled: "启用",
 
-  // 菜单
+  // Menu
   pinColumn: "引脚列",
   pinLeft: "Pin Left",
   pinRight: "Pin Right",
@@ -90,7 +90,7 @@ const AG_GRID_LOCALE_EN = {
   csvExport: "CSV 导出",
   excelExport: "Excel 导出",
 
-  // 企业菜单聚合和状态栏
+  // Enterprise Menu Aggregation and Status Bar
   sum: "总和",
   min: "分钟",
   max: "最大值",
@@ -110,10 +110,10 @@ const AG_GRID_LOCALE_EN = {
   firstPage: "第一页",
   previousPage: "上一页",
 
-  // 旋转
+  // Pivoting
   pivotColumnGroupTotals: "总计",
 
-  // 企业菜单（图表）
+  // Enterprise Menu (Charts)
   pivotChartAndPivotMode: "数据透视图和数据透视模式",
   pivotChart: "数据透视图",
   chartRange: "图表范围",
@@ -145,7 +145,7 @@ const AG_GRID_LOCALE_EN = {
 
   histogramChart: "直方图",
 
-  // 图表
+  // Charts
   pivotChartTitle: "数据透视图",
   rangeChartTitle: "范围图表",
   settings: "设置",
@@ -217,67 +217,66 @@ const AG_GRID_LOCALE_EN = {
   histogramBinCount: "bin 计数",
   columnGroup: "列",
   barGroup: "酒吧 ",
-
-  pieGroup: "Pie",
-  lineGroup: "Line",
+  pieGroup: "派",
+  lineGroup: "线",
   scatterGroup: "X Y (Scatter)",
-  areaGroup: "Area",
-  histogramGroup: "Histogram",
-  groupedColumnTooltip: "Grouped",
-  stackedColumnTooltip: "Stacked",
-  normalizedColumnTooltip: "100% Stacked",
-  groupedBarTooltip: "Grouped",
-  stackedBarTooltip: "Stacked",
-  normalizedBarTooltip: "100% Stacked",
-  pieTooltip: "Pie",
-  doughnutTooltip: "Doughnut",
-  lineTooltip: "Line",
-  groupedAreaTooltip: "Area",
-  stackedAreaTooltip: "Stacked",
-  normalizedAreaTooltip: "100% Stacked",
-  scatterTooltip: "Scatter",
-  bubbleTooltip: "Bubble",
-  histogramTooltip: "Histogram",
-  noDataToChart: "No data available to be charted.",
-  pivotChartRequiresPivotMode: "Pivot Chart requires Pivot Mode enabled.",
-  chartSettingsToolbarTooltip: "Menu",
-  chartLinkToolbarTooltip: "Linked to Grid",
-  chartUnlinkToolbarTooltip: "Unlinked from Grid",
-  chartDownloadToolbarTooltip: "Download Chart",
+  areaGroup: "区域",
+  histogramGroup: "直方图",
+  groupedColumnTooltip: "分组",
+  stackedColumnTooltip: "堆叠",
+  normalizedColumnTooltip: "100% 堆叠",
+  groupedBarTooltip: "分组",
+  stackedBarTooltip: "堆叠",
+  normalizedBarTooltip: "100% 堆叠",
+  pieTooltip: "馅饼",
+  doughnutTooltip: "甜甜圈",
+  lineTooltip: "线",
+  groupedAreaTooltip: "区域",
+  stackedAreaTooltip: "堆叠",
+  normalizedAreaTooltip: "100% 堆叠",
+  scatterTooltip: "散布",
+  bubbleTooltip: "气泡",
+  histogramTooltip: "直方图",
+  noDataToChart: "没有可供绘制的数据。",
+  pivotChartRequiresPivotMode: "数据透视图需要启用数据透视模式。",
+  chartSettingsToolbarTooltip: "菜单",
+  chartLinkToolbarTooltip: "链接到网格",
+  chartUnlinkToolbarTooltip: "从网格取消链接",
+  chartDownloadToolbarTooltip: "下载图表",
 
   // ARIA
-  ariaHidden: "hidden",
-  ariaVisible: "visible",
-  ariaChecked: "checked",
-  ariaUnchecked: "unchecked",
-  ariaIndeterminate: "indeterminate",
-  ariaColumnSelectAll: "Toggle Select All Columns",
-  ariaInputEditor: "Input Editor",
-  ariaDateFilterInput: "Date Filter Input",
-  ariaFilterInput: "Filter Input",
-  ariaFilterColumnsInput: "Filter Columns Input",
-  ariaFilterValue: "Filter Value",
-  ariaFilterFromValue: "Filter from value",
-  ariaFilterToValue: "Filter to value",
-  ariaFilteringOperator: "Filtering Operator",
-  ariaColumn: "Column",
-  ariaColumnGroup: "Column Group",
-  ariaRowSelect: "Press SPACE to select this row",
-  ariaRowDeselect: "Press SPACE to deselect this row",
-  ariaRowToggleSelection: "Press Space to toggle row selection",
-  ariaRowSelectAll: "Press Space to toggle all rows selection",
-  ariaToggleVisibility: "Press SPACE to toggle visibility",
-  ariaSearch: "Search",
-  ariaSearchFilterValues: "Search filter values",
+  ariaHidden: "隐藏",
+  ariaVisible: "可见",
+  ariaChecked: "已检查",
+  ariaUnchecked: "未选中",
+  ariaIndeterminate: "不确定",
+  ariaColumnSelectAll: "切换选择所有列",
+  ariaInputEditor: "输入编辑器",
+  ariaDateFilterInput: "日期过滤器输入",
+  ariaFilterInput: "过滤器输入",
+  ariaFilterColumnsInput: "过滤列输入",
+  ariaFilterValue: "过滤器值",
+  ariaFilterFromValue: "从值过滤",
+  ariaFilterToValue: "过滤到值",
+  ariaFilteringOperator: "过滤运算符",
+  ariaColumn: "列",
+  ariaColumnGroup: "列组",
+  ariaRowSelect: "按空格键选择这一行",
+  ariaRowDeselect: "按空格键取消选择这一行",
+  ariaRowToggleSelection: "按空格键切换行选择",
+  ariaRowSelectAll: "按空格键切换所有行选择",
+  ariaToggleVisibility: "按空格键切换可见性",
+  ariaSearch: "搜索",
+  ariaSearchFilterValues: "搜索过滤器值",
 
   // ARIA LABEL FOR DIALOGS
-  ariaLabelColumnMenu: "Column Menu",
-  ariaLabelCellEditor: "Cell Editor",
-  ariaLabelDialog: "Dialog",
-  ariaLabelSelectField: "Select Field",
-  ariaLabelTooltip: "Tooltip",
-  ariaLabelContextMenu: "Context Menu",
-  ariaLabelColumnMenu: "Column Menu",
-  ariaLabelSubMenu: "SubMenu",
-  ariaLabelAggregationFunction: "Aggregation Function",
+  ariaLabelColumnMenu: "列菜单",
+  ariaLabelCellEditor: "单元格编辑器",
+  ariaLabelDialog: "对话框",
+  ariaLabelSelectField: "选择字段",
+  ariaLabelTooltip: "工具提示",
+  ariaLabelContextMenu: "上下文菜单",
+  ariaLabelColumnMenu: "列菜单",
+  ariaLabelSubMenu: "子菜单",
+  ariaLabelAggregationFunction: "聚合函数",
 };
