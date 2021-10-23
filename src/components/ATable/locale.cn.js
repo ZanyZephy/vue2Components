@@ -1,5 +1,5 @@
 // Example locale file for English, give this to your locale team to translate
-const AG_GRID_LOCALE_EN = {
+export const AG_GRID_LOCALE_CN = {
   // Set Filter
   selectAll: "(全选)",
   selectAllSearchResults: "(选择所有搜索结果)",

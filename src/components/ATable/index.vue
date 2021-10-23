@@ -1,0 +1,71 @@
+<template>
+    <AgGridVue
+        v-bind="$attrs"
+        v-on="$listeners"
+        class="ag-theme-balham"
+        :enableRangeSelection="enableRangeSelection"
+        :defaultColDef="defaultColDef"
+        :enableFillHandle="enableFillHandle"
+        :undoRedoCellEditing="undoRedoCellEditing"
+        :enableCellChangeFlash="enableCellChangeFlash"
+        :undoRedoCellEditingLimit="undoRedoCellEditingLimit"
+        :localeText="localeText"
+        :enableBrowserTooltips="enableBrowserTooltips"
+        :rowDragManaged="true"
+        :animateRows="true"
+    ></AgGridVue>
+</template>
+<script>
+
+import { AgGridVue } from "@ag-grid-community/vue";
+import { AG_GRID_LOCALE_CN } from './locale.cn.js'
+export default {
+    inheritAttrs: false,
+    name: "ATable",
+    props: {
+        localeText: {
+            type: Object,
+            default: () => AG_GRID_LOCALE_CN,
+        },//设置中文语言包
+        enableRangeSelection: {
+            type: Boolean,
+            default: true,
+        },//启用范围选择
+        enableFillHandle: {
+            type: Boolean,
+            default: true,
+        },//启用填充
+        undoRedoCellEditing: {
+            type: Boolean,
+            default: true,
+        },//启用撤消
+        undoRedoCellEditingLimit: {
+            type: Number,
+            default: 5,
+        },//撤销次数
+        enableCellChangeFlash: {
+            type: Boolean,
+            default: true,
+        },//数据更改后让单元格闪烁
+        enableBrowserTooltips: {
+            type: Boolean,
+            default: true,
+        },//浏览器提示
+        defaultColDef: {
+            type: Object,
+            default: () => {
+                return {
+                    flex: 1,
+                    editable: true,//默认可编辑
+                    filter: true,//默认可筛选
+                    sortable: true,//默认可排序
+                    resizable: true,//可调整列宽度
+                }//默认列配置
+            }
+        },
+    },
+    components: {
+        AgGridVue
+    },
+}
+</script>
