@@ -17,7 +17,7 @@ export const AG_GRID_LOCALE_CN = {
   lessThan: "小于",
   greaterThan: "大于",
   lessThanOrEqual: "小于或等于",
-  GreaterThanOrEqual: "大于或等于",
+  greaterThanOrEqual: "大于或等于",
   inRange: "在范围内",
   inRangeStart: "从",
   inRangeEnd: "到",

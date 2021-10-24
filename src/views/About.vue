@@ -3,7 +3,7 @@
     <ATable
       :enableRangeSelection="enableRangeSelection"
       style="width: 100%; height: 500px"
-      :columnDefs="columnDefs"
+      :columnDefs="carMain"
       :rowData="rowData"
       rowSelection="multiple"
       :suppressRowClickSelection="true"
@@ -18,6 +18,7 @@
 
 <script>
 import ATable from "@/components/ATable/index.vue";
+import { carMain } from './index'
 // import ElSelect from '@/components/el-select/index.vue';
 export default {
   components: {
@@ -26,6 +27,7 @@ export default {
   },
   data() {
     return {
+      carMain,
       value1: ['选项1'],
       options: [{
         value: '选项1',

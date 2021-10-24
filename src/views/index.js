@@ -1,6 +1,6 @@
 //车辆主要信息
-const carMain = [
-  { headerName: "单据状态", field: "" },
+export const carMain = [
+  { headerName: "单据状态", field: "", pinned: "left" },
   {
     headerName: "渠道",
     children: [{ headerName: "名称⭐", field: "" }],
@@ -35,7 +35,7 @@ const carMain = [
 ];
 
 //车辆属性
-const obj = [
+export const carAttr = [
   { headerName: "车辆ID", field: "" },
   {
     headerName: "车辆",
@@ -72,7 +72,7 @@ const obj = [
   },
 ];
 
-const che = [
+export const carOwner = [
   { headerName: "车辆ID", field: "" },
   {
     headerName: "车辆",
@@ -100,7 +100,7 @@ const che = [
   { headerName: "快递地址", field: "" },
 ];
 
-const kaipiao = [
+export const invoicing = [
   { headerName: "车辆ID", field: "" },
   {
     headerName: "车辆",
@@ -147,7 +147,7 @@ const kaipiao = [
   { headerName: "残值金额现付", field: "" },
 ];
 
-const jindu = [
+export const carProgress = [
   { headerName: "车辆ID", field: "" },
   {
     headerName: "车辆",

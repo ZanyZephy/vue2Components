@@ -13,6 +13,7 @@
         :enableBrowserTooltips="enableBrowserTooltips"
         :rowDragManaged="true"
         :animateRows="true"
+        :suppressColumnMoveAnimation="false"
     ></AgGridVue>
 </template>
 <script>
@@ -56,10 +57,12 @@ export default {
             default: () => {
                 return {
                     flex: 1,
+                    minWidth:150,
                     editable: true,//默认可编辑
                     filter: true,//默认可筛选
                     sortable: true,//默认可排序
                     resizable: true,//可调整列宽度
+                    floatingFilter: true,
                 }//默认列配置
             }
         },
