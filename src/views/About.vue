@@ -11,8 +11,8 @@
 
     <!-- <ElSelect v-model="value1" multiple placeholder="请选择">
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
-    </ElSelect>
-    <el-button type="primary" @click="onChange">点我</el-button>-->
+    </ElSelect> -->
+    <el-button type="primary" @click="onChange">点我</el-button>
   </div>
 </template>
 
@@ -93,7 +93,7 @@ export default {
   methods: {
     onChange() {
       console.log(this.rowData)
-      this.value1.push('选项3')
+      // this.value1.push('选项3')
     },
     getRows() {
       return Array.apply(null, Array(100)).map(function (_, i) {

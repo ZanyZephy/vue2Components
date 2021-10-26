@@ -14,15 +14,34 @@
         :rowDragManaged="true"
         :animateRows="true"
         :suppressColumnMoveAnimation="false"
+        :frameworkComponents="frameworkComponents"
     ></AgGridVue>
 </template>
 <script>
 
 import { AgGridVue } from "@ag-grid-community/vue";
 import { AG_GRID_LOCALE_CN } from './locale.cn.js'
+import CellDatePicker from './editor/datePicker/index.vue'
+import CheckBox from './editor/checkBox/index.vue'
+import CheckBoxRender from './editor/checkBox/render.vue'
 export default {
     inheritAttrs: false,
     name: "ATable",
+    components: {
+        AgGridVue,
+        CellDatePicker,
+        CheckBox,
+        CheckBoxRender
+    },
+    data() {
+        return {
+            frameworkComponents: [
+               CellDatePicker,
+               CheckBox,
+               CheckBoxRender
+            ]
+        }
+    },
     props: {
         localeText: {
             type: Object,
@@ -57,7 +76,7 @@ export default {
             default: () => {
                 return {
                     flex: 1,
-                    minWidth:150,
+                    minWidth: 150,
                     editable: true,//默认可编辑
                     filter: true,//默认可筛选
                     sortable: true,//默认可排序
@@ -66,9 +85,6 @@ export default {
                 }//默认列配置
             }
         },
-    },
-    components: {
-        AgGridVue
     },
 }
 </script>

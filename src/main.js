@@ -10,10 +10,12 @@ import "@ag-grid-enterprise/all-modules/dist/styles/ag-theme-balham.css";
 import { LicenseManager } from "@ag-grid-enterprise/core";
 import { AllModules } from "@ag-grid-enterprise/all-modules";
 import { ModuleRegistry } from "@ag-grid-community/core";
-
 ModuleRegistry.registerModules(AllModules);
 LicenseManager.prototype.validateLicense = () => true;
-
+// import CustomDateComponent from '@/components/ATable/datePicker.js';
+// console.log(CustomDateComponent)
+// Vue.component("CustomDateComponent", picker);
+// Vue.component("agDatePicker", CellComponent);
 // import ATable from "@/components/ATable";
 // console.log(ATable.name);
 // console.log(ATable)
