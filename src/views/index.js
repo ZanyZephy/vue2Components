@@ -6,7 +6,7 @@ export const carMain = [
     cellEditor: "CellDatePicker",
     cellEditorParams: {
       editorAttrs: {
-        "value-format": "yyyy-MM-d",
+        // "value-format": "yyyy-MM-d",
       },
     },
 

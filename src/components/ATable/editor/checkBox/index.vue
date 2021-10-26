@@ -3,8 +3,8 @@
         size="mini"
         class="editor"
         v-model="value"
-        v-bind="defaultConfig"
         ref="editor"
+        v-bind="getAttrs"
         @keydown.enter.native="onKeyDown"
     ></Checkbox>
 </template>
@@ -18,35 +18,29 @@ export default {
     data() {
         return {
             value: null,
-            defaultConfig: {
-                trueLable: 1,
-                falseLable: 0
-            }
         }
     },
-    // computed: {
-    //     getDefaultConfig() {
-    //         return this.defaultConfig
-    //     }
-    // },
+    computed: {
+        getAttrs() {
+            return Object.assign({
+                'true-lable': 1,
+                'false-lable': 0
+            }, this.params.editorAttrs)
+        }
+    },
     methods: {
         getValue() {
             return this.value;
         },
     },
     mounted() {
-        const isObject = (object) => Object.prototype.toString.call(object) === '[object Object]'
-        if (this.params.editorAttrs !== undefined && isObject(this.params.editorAttrs)) {
-            Object.keys(this.params.editorAttrs).forEach(key => {
-                const value = this.params.editorAttrs[key]
-                this.defaultConfig[key] = value !== undefined ? value : this.defaultConfig[key]
-            })
-        }
-        console.log(this.defaultConfig)
-        if (this.defaultConfig.trueLable === this.params.value) {
-            this.value = this.defaultConfig.falseLable
+        this.value = this.params.value;
+        if (this.getAttrs['true-lable'] === this.value) {
+            this.value = this.getAttrs['false-lable']
+            console.log(this.value)
         } else {
-            this.value = this.defaultConfig.trueLable
+            this.value = this.getAttrs['true-lable']
+            console.log(this.value)
         }
         this.$nextTick(() => {
             this.params.stopEditing()

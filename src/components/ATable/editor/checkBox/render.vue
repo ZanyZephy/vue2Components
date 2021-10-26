@@ -2,10 +2,10 @@
     <Checkbox
         size="mini"
         class="editor"
-        v-model="value"
+        :value="value"
         ref="editor"
-     
-        v-bind="getDefaultConfig"
+        :disabled="true"
+        v-bind="getAttrs"
     ></Checkbox>
 </template>
 <script>
@@ -15,30 +15,26 @@ export default {
     components: {
         Checkbox,
     },
+    computed: {
+        getAttrs() {
+            console.log(Object.assign({
+                'true-lable': 1,
+                'false-lable': 0
+            }, this.params.editorAttrs))
+            return Object.assign({
+                'true-lable': 1,
+                'false-lable': 0
+            }, this.params.editorAttrs)
+        }
+    },
     data() {
         return {
             value: null,
-            defaultConfig: {
-                trueLable: 1,
-                falseLable: 0
-            }
         }
     },
-    computed: {
-        getDefaultConfig(){
-            return this.defaultConfig
-        }
-    },
-    mounted() {
-        const isObject = (object) => Object.prototype.toString.call(object) === '[object Object]'
-        if (this.params.editorAttrs !== undefined && isObject(this.params.editorAttrs)) {
-            Object.keys(this.params.editorAttrs).forEach(key => {
-                const value = this.params.editorAttrs[key]
-                this.defaultConfig[key] = value !== undefined ? value : this.defaultConfig[key]
-            })
-        }
-        console.log(this.defaultConfig.falseLable)
-        this.value = 1;
+    beforeMount() {
+        this.value = this.params.value;
+        console.log(this.value)
         this.$nextTick(() => {
             this.$refs.editor.$el.querySelector('.el-checkbox__input').classList.remove("is-disabled");
         })
