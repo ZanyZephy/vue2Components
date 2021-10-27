@@ -19,7 +19,7 @@ export default {
         getAttrs({ $data }) {
             return Object.assign({
                 'value-format': "yyyy-MM-dd"
-            }, $data.params.editorAttrs)
+            }, $data.params.bind)
         }
     },
     data() {

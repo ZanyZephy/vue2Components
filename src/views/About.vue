@@ -2,17 +2,20 @@
   <div>
     <ATable
       :enableRangeSelection="enableRangeSelection"
-      style="width: 100%; height: 500px"
+      :style="{ width: '100%', height: ' 500px' }"
       :columnDefs="carMain"
       :rowData="rowData"
       rowSelection="multiple"
       :suppressRowClickSelection="true"
+      :pagination="true"
+      onCellValueChanged="onCellValueChanged"
+      @dataChanged="onDataChanged"
     ></ATable>
 
     <!-- <ElSelect v-model="value1" multiple placeholder="请选择">
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
-    </ElSelect> -->
-    <el-button type="primary" @click="onChange">点我</el-button>
+    </ElSelect>-->
+    <el-button style="z-index: 9999;" type="primary" @click="onChange">点我</el-button>
   </div>
 </template>
 
@@ -95,17 +98,16 @@ export default {
       console.log(this.rowData)
       // this.value1.push('选项3')
     },
+    onDataChanged(e) {
+      console.log(e)
+    },
     getRows() {
       return Array.apply(null, Array(100)).map(function (_, i) {
         return {
-          a: "a-" + i,
-          b: "b-" + i,
-          c: "c-" + i,
-          d: "d-" + i,
-          e: "e-" + i,
-          f: "f-" + i,
-          g: "g-" + i,
-          h: "h-" + i,
+          carHanle: {
+            buyer: "",
+          },
+          channelName: 1
         };
       });
     },

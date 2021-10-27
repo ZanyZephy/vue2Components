@@ -1,17 +1,10 @@
 <template>
-    <Checkbox
-        size="mini"
-        class="editor"
-        v-model="value"
-        ref="editor"
-        v-bind="getAttrs"
-        @keydown.enter.native="onKeyDown"
-    ></Checkbox>
+    <Checkbox v-bind="getAttrs" class="editor" v-model="value"></Checkbox>
 </template>
 <script>
 import { Checkbox } from "element-ui";
 export default {
-    name: "CheckBox",
+    name: "CellCheckBox",
     components: {
         Checkbox,
     },
@@ -21,11 +14,12 @@ export default {
         }
     },
     computed: {
-        getAttrs() {
+        getAttrs({ $data }) {
             return Object.assign({
-                'true-lable': 1,
-                'false-lable': 0
-            }, this.params.editorAttrs)
+                'true-label': 1,
+                'false-label': 0,
+                size: 'mini'
+            }, $data.params.bind)
         }
     },
     methods: {
@@ -34,13 +28,10 @@ export default {
         },
     },
     mounted() {
-        this.value = this.params.value;
-        if (this.getAttrs['true-lable'] === this.value) {
-            this.value = this.getAttrs['false-lable']
-            console.log(this.value)
+        if (this.getAttrs['true-label'] === this.params.value) {
+            this.value = this.getAttrs['false-label']
         } else {
-            this.value = this.getAttrs['true-lable']
-            console.log(this.value)
+            this.value = this.getAttrs['true-label']
         }
         this.$nextTick(() => {
             this.params.stopEditing()

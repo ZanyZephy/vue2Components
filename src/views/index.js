@@ -5,7 +5,7 @@ export const carMain = [
     field: "billState",
     cellEditor: "CellDatePicker",
     cellEditorParams: {
-      editorAttrs: {
+      bind: {
         // "value-format": "yyyy-MM-d",
       },
     },
@@ -18,18 +18,12 @@ export const carMain = [
       {
         headerName: "名称⭐",
         field: "channelName",
-        cellEditor: "CheckBox",
-        cellRendererFramework: "CheckBoxRender",
-        cellEditorParams: {
-          editorAttrs: {
-            trueLable: 1,
-            falseLable:0
-          },
-        },
+        cellEditor: "CellCheckBox",
+        cellRendererFramework: "CellCheckBoxRender",
       },
     ],
   },
-  { headerName: "收车渠道", field: "carSourceName" },
+  { headerName: "收车渠道", field: "carSourceName", cellEditor: "DTable" },
   {
     headerName: "业务网点",
     children: [{ headerName: "名称⭐", field: "outletsName" }],

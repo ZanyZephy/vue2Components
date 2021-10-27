@@ -1,40 +1,29 @@
 <template>
-    <Checkbox
-        size="mini"
-        class="editor"
-        :value="value"
-        ref="editor"
-        :disabled="true"
-        v-bind="getAttrs"
-    ></Checkbox>
+    <Checkbox class="editor" :value="value" ref="editor" :disabled="true" v-bind="getAttrs"></Checkbox>
 </template>
 <script>
 import { Checkbox } from "element-ui";
 export default {
-    name: "CheckBoxRender",
+    name: "CellCheckBoxRender",
     components: {
         Checkbox,
-    },
-    computed: {
-        getAttrs() {
-            console.log(Object.assign({
-                'true-lable': 1,
-                'false-lable': 0
-            }, this.params.editorAttrs))
-            return Object.assign({
-                'true-lable': 1,
-                'false-lable': 0
-            }, this.params.editorAttrs)
-        }
     },
     data() {
         return {
             value: null,
         }
     },
-    beforeMount() {
+    computed: {
+        getAttrs({ $data }) {
+            return Object.assign({
+                'true-label': 1,
+                'false-label': 0,
+                size: "mini"
+            }, $data.params.bind)
+        }
+    },
+    mounted() {
         this.value = this.params.value;
-        console.log(this.value)
         this.$nextTick(() => {
             this.$refs.editor.$el.querySelector('.el-checkbox__input').classList.remove("is-disabled");
         })
