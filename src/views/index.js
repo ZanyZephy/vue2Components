@@ -23,10 +23,37 @@ export const carMain = [
       },
     ],
   },
-  { headerName: "收车渠道", field: "carSourceName", cellEditor: "DTable" },
+  {
+    headerName: "收车渠道",
+    field: "carSourceName",
+    cellEditor: "CellDialog",
+    valueParser: (params) => {
+      console.log("解析");
+    },
+    valueGetter: (params) => {
+      console.log("获取");
+    },
+    valueSetter: (params) => {
+      console.log("设置");
+    },
+    cellEditorParams: {
+      bind: {
+        // "value-format": "yyyy-MM-d",
+      },
+    },
+  },
   {
     headerName: "业务网点",
-    children: [{ headerName: "名称⭐", field: "outletsName" }],
+    children: [
+      {
+        headerName: "名称⭐",
+        field: "outletsName",
+        valueParser: (params) => {
+          console.log(params.newValue);
+          return 888;
+        },
+      },
+    ],
   },
   {
     headerName: "收车场地",

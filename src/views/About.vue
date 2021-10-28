@@ -7,11 +7,12 @@
       :rowData="rowData"
       rowSelection="multiple"
       :suppressRowClickSelection="true"
-      :pagination="true"
+      :elPagination.sync="pagination"
       onCellValueChanged="onCellValueChanged"
       @dataChanged="onDataChanged"
     ></ATable>
 
+    <!-- <DTable :columnDefs="carMain" :rowData="rowData"></DTable> -->
     <!-- <ElSelect v-model="value1" multiple placeholder="请选择">
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
     </ElSelect>-->
@@ -22,14 +23,23 @@
 <script>
 import ATable from "@/components/ATable/index.vue";
 import { carMain } from './index'
+// import DTable from '@/components/ATable/editor/DTable/index.vue'
 // import ElSelect from '@/components/el-select/index.vue';
 export default {
   components: {
     ATable,
+    // DTable
     // ElSelect
   },
   data() {
     return {
+      pagination: {
+        pageSize: 10,
+        currentPage: 1,
+        onCurrentChange: (e) => {
+          console.log(e)
+        }
+      },
       carMain,
       value1: ['选项1'],
       options: [{
@@ -96,17 +106,20 @@ export default {
   methods: {
     onChange() {
       console.log(this.rowData)
+      console.log(this.pagination.currentPage)
+            console.log(this.pagination.pageSize)
       // this.value1.push('选项3')
     },
     onDataChanged(e) {
       console.log(e)
     },
     getRows() {
-      return Array.apply(null, Array(100)).map(function (_, i) {
+      return Array.apply(null, Array(22)).map(function (_, i) {
         return {
           carHanle: {
             buyer: "",
           },
+          carSourceName:"",
           channelName: 1
         };
       });
