@@ -1,5 +1,5 @@
 <template>
-    <el-dialog
+    <Dialog
         class="elDialog"
         center
         :append-to-body="true"
@@ -34,7 +34,7 @@
             :columnDefs="columnDefs"
             :rowData="rowData"
         ></BasicTable>
-    </el-dialog>
+    </Dialog>
 </template>
 <script>
 import { Dialog } from 'element-ui'
@@ -47,7 +47,7 @@ export default {
     },
     data() {
         return {
-            isLoading: false,
+            isLoading: false,//是否正在加载
             value: null,
             dialogVisible: false,
             columnDefs: [
@@ -78,17 +78,15 @@ export default {
             this.params.stopEditing()
         },
         onGridReady(params) {
-            console.log(params)
             this.gridApi = params.api;
             this.columnApi = params.columnApi;
         },
         getSelectedRows() {
             const selectedRows = this.gridApi.getSelectedRows();
+            this.value = this.params.parseValue(selectedRows)
             this.dialogVisible = false
-            this.value = selectedRows
-           this.gridApi.stopEditing()
-            console.log(selectedRows)
         },
+
         getData() {
 
         }

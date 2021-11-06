@@ -1,4 +1,6 @@
 //车辆主要信息
+
+
 export const carMain = [
   {
     headerName: "单据状态",
@@ -28,15 +30,22 @@ export const carMain = [
     field: "carSourceName",
     cellEditor: "CellDialog",
     valueParser: (params) => {
-      console.log("解析");
+      //解析选中的数值
+      const { name, age } = params.newValue[0];
+      params.data.outletsId = age;
+      return name;
     },
-    valueGetter: (params) => {
-      console.log("获取");
-    },
-    valueSetter: (params) => {
-      console.log("设置");
+    suppressKeyboardEvent: (params) => {
+      const { key } = params.event;
+      if (key === "Backspace") {
+        params.data.carSourceName = "";
+        params.data.carSourceId = "";
+        params.api.refreshCells();
+        return true;
+      }
     },
     cellEditorParams: {
+      dataKey: "", //
       bind: {
         // "value-format": "yyyy-MM-d",
       },
@@ -48,16 +57,17 @@ export const carMain = [
       {
         headerName: "名称⭐",
         field: "outletsName",
-        valueParser: (params) => {
-          console.log(params.newValue);
-          return 888;
-        },
       },
     ],
   },
   {
     headerName: "收车场地",
-    children: [{ headerName: "名称⭐", field: "carAreaName" }],
+    children: [
+      {
+        headerName: "名称⭐",
+        field: "carAreaName",
+      },
+    ],
   },
   { headerName: "当前所在车场", field: "currentCarAreaName" },
   { headerName: "采购员", field: "carHanle.buyer" },

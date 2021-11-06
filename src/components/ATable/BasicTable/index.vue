@@ -16,9 +16,12 @@
             :rowDragManaged="true"
             :animateRows="true"
             :suppressColumnMoveAnimation="false"
+            @grid-ready="onGridReady"
+            @selectionChanged="onSelectionChanged"
         ></AgGridVue>
         <!-- 分页 -->
         <Row type="flex" :justify="getPaginationConf.position" v-if="getPaginationConf !== false">
+            <span>已选{{ selectedRows.length }}</span>
             <Pagination
                 :small="getPaginationConf.small"
                 :background="getPaginationConf.background"
@@ -63,8 +66,22 @@ export default {
             return config
         },
     },
+    methods: {
+        onGridReady(params) {
+            this.gridApi = params.api;
+            this.gridColumnApi = params.columnApi;
+            this.selectedRows = this.gridApi.getSelectedRows()
+        },
+        onSelectionChanged() {
+            this.selectedRows = this.gridApi.getSelectedRows()
+            console.log(this.selectedRows)
+        }
+    },
     data() {
         return {
+            selectedRows: [],
+            gridApi: null,
+            gridColumnApi: null,
             elPaginationDef: {
                 small: false,
                 background: true,
