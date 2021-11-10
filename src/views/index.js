@@ -37,80 +37,80 @@ export const carMain = [
       },
     ],
   },
-  // {
-  //   headerName: "收车渠道",
-  //   field: "carSourceName",
-  //   cellEditor: "CellDialog",
-  //   valueParser: (params) => {
-  //     //解析选中的数值
-  //     const { name, age } = params.newValue[0];
-  //     params.data.outletsId = age;
-  //     return name;
-  //   },
-  //   suppressKeyboardEvent: (params) => {
-  //     const { key } = params.event;
-  //     if (key === "Backspace") {
-  //       params.data.carSourceName = "";
-  //       params.data.carSourceId = "";
-  //       params.api.refreshCells();
-  //       return true;
-  //     }
-  //   },
-  //   cellEditorParams: {
-  //     dataKey: "", //
-  //     bind: {
-  //       // "value-format": "yyyy-MM-d",
-  //     },
-  //   },
-  // },
-  // {
-  //   headerName: "业务网点",
-  //   children: [
-  //     {
-  //       headerName: "名称⭐",
-  //       field: "outletsName",
-  //     },
-  //   ],
-  // },
-  // {
-  //   headerName: "收车场地",
-  //   children: [
-  //     {
-  //       headerName: "名称⭐",
-  //       field: "carAreaName",
-  //     },
-  //   ],
-  // },
-  // { headerName: "当前所在车场", field: "currentCarAreaName" },
-  // { headerName: "采购员", field: "carHanle.buyer" },
-  // { headerName: "车辆ID", field: "carSn" },
-  // { headerName: "SAP采购订单号", field: "sapPurchaseOrder" },
-  // { headerName: "SAP收货凭证号", field: "sapReceiptVoucherNo" },
-  // { headerName: "SAP批次编号", field: "sapBatchNumber" },
-  // {
-  //   headerName: "车辆",
-  //   children: [
-  //     { headerName: "车牌号码⭐", field: "carNo" },
-  //     { headerName: "当前状态", field: "handleState" },
-  //     { headerName: "技术验车日期", field: "carHanle.itVerificationDate" },
-  //   ],
-  // },
-  // {
-  //   headerName: "车辆",
-  //   children: [
-  //     { headerName: "类型⭐", field: "carTypeName" },
-  //     { headerName: "KPI类型⭐", field: "kpiName" },
-  //     { headerName: "单位性质", field: "companyNature" },
-  //     { headerName: "使用性质", field: "useNature" },
-  //   ],
-  // },
-  // { headerName: "定价方式", field: "priceMode" },
-  // { headerName: "采购员", field: "buyer" },
-  // { headerName: "收车日期⭐", field: "admissionDate" },
-  // { headerName: "收车批次", field: "collectCarBatch" },
-  // { headerName: "收车备注♦", field: "remarks" },
-  // { headerName: "制单人", field: "createUserCode" },
-  // { headerName: "制单日期", field: "createTime" },
+  {
+    headerName: "收车渠道",
+    field: "carSourceName",
+    cellEditor: "CellDialog",
+    valueParser: (params) => {
+      //解析选中的数值
+      const { name, age } = params.newValue[0];
+      params.data.outletsId = age;
+      return name;
+    },
+    suppressKeyboardEvent: (params) => {
+      const { key } = params.event;
+      if (key === "Backspace") {
+        params.data.carSourceName = "";
+        params.data.carSourceId = "";
+        params.api.refreshCells();
+        return true;
+      }
+    },
+    cellEditorParams: {
+      dataKey: "", //
+      bind: {
+        // "value-format": "yyyy-MM-d",
+      },
+    },
+  },
+  {
+    headerName: "业务网点",
+    children: [
+      {
+        headerName: "名称⭐",
+        field: "outletsName",
+      },
+    ],
+  },
+  {
+    headerName: "收车场地",
+    children: [
+      {
+        headerName: "名称⭐",
+        field: "carAreaName",
+      },
+    ],
+  },
+  { headerName: "当前所在车场", field: "currentCarAreaName" },
+  { headerName: "采购员", field: "carHanle.buyer" },
+  { headerName: "车辆ID", field: "carSn" },
+  { headerName: "SAP采购订单号", field: "sapPurchaseOrder" },
+  { headerName: "SAP收货凭证号", field: "sapReceiptVoucherNo" },
+  { headerName: "SAP批次编号", field: "sapBatchNumber" },
+  {
+    headerName: "车辆",
+    children: [
+      { headerName: "车牌号码⭐", field: "carNo" },
+      { headerName: "当前状态", field: "handleState" },
+      { headerName: "技术验车日期", field: "carHanle.itVerificationDate" },
+    ],
+  },
+  {
+    headerName: "车辆",
+    children: [
+      { headerName: "类型⭐", field: "carTypeName" },
+      { headerName: "KPI类型⭐", field: "kpiName" },
+      { headerName: "单位性质", field: "companyNature" },
+      { headerName: "使用性质", field: "useNature" },
+    ],
+  },
+  { headerName: "定价方式", field: "priceMode" },
+  { headerName: "采购员", field: "buyer" },
+  { headerName: "收车日期⭐", field: "admissionDate" },
+  { headerName: "收车批次", field: "collectCarBatch" },
+  { headerName: "收车备注♦", field: "remarks" },
+  { headerName: "制单人", field: "createUserCode" },
+  { headerName: "制单日期", field: "createTime" },
 ];
 
 //车辆属性
