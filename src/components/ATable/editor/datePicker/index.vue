@@ -34,6 +34,7 @@ export default {
         getValue() {
             return this.value;
         },
+        
     },
     mounted() {
         this.value = this.params.value;

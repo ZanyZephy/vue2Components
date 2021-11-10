@@ -9,38 +9,48 @@
             :defaultColDef="defaultColDef"
             :enableFillHandle="enableFillHandle"
             :undoRedoCellEditing="undoRedoCellEditing"
-            :enableCellChangeFlash="enableCellChangeFlash"
             :undoRedoCellEditingLimit="undoRedoCellEditingLimit"
-            :localeText="localeText"
+            :enableCellChangeFlash="enableCellChangeFlash"
             :enableBrowserTooltips="enableBrowserTooltips"
-            :rowDragManaged="true"
-            :animateRows="true"
-            :suppressColumnMoveAnimation="false"
+            :rowDragManaged="rowDragManaged"
+            :animateRows="animateRows"
+            :maintainColumnOrder="maintainColumnOrder"
+            :localeText="localeText"
+            :rowSelection="rowSelection"
+            :suppressRowClickSelection="suppressRowClickSelection"
+            :suppressCopyRowsToClipboard="suppressCopyRowsToClipboard"
+            :suppressDragLeaveHidesColumns="suppressDragLeaveHidesColumns"
             @grid-ready="onGridReady"
             @selectionChanged="onSelectionChanged"
         ></AgGridVue>
         <!-- 分页 -->
-        <Row type="flex" :justify="getPaginationConf.position" v-if="getPaginationConf !== false">
-            <span>已选{{ selectedRows.length }}</span>
+        <Row
+            type="flex"
+            :style="{ padding: '0 10px' }"
+            align="middle"
+            justify="space-between"
+            v-if="getElPagination !== false"
+        >
+            <span class="el-pagination__selected">已选 {{ selectedRows.length }} 条</span>
             <Pagination
-                :small="getPaginationConf.small"
-                :background="getPaginationConf.background"
-                :page-size.sync="getPaginationConf.pageSize"
-                :total="getPaginationConf.total"
-                :page-count="getPaginationConf.pageCount"
-                :pager-count="getPaginationConf.pagerCount"
-                :current-page.sync="getPaginationConf.currentPage"
-                :layout="getPaginationConf.layout"
-                :page-sizes="getPaginationConf.pageSizes"
-                :popper-class="getPaginationConf.popperClass"
-                :prev-text="getPaginationConf.prevText"
-                :next-text="getPaginationConf.nextText"
-                :disabled="getPaginationConf.disabled"
-                :hide-on-single-page="getPaginationConf.hideOnSinglePage"
-                @size-change="getPaginationConf.onSizeChange"
-                @current-change="getPaginationConf.onCurrentChange"
-                @prev-click="getPaginationConf.onPrevClick"
-                @next-click="getPaginationConf.onNextClick"
+                :small="getElPagination.small"
+                :background="getElPagination.background"
+                :page-size.sync="getElPagination.pageSize"
+                :total="getElPagination.total"
+                :page-count="getElPagination.pageCount"
+                :pager-count="getElPagination.pagerCount"
+                :current-page.sync="getElPagination.currentPage"
+                :layout="getElPagination.layout"
+                :page-sizes="getElPagination.pageSizes"
+                :popper-class="getElPagination.popperClass"
+                :prev-text="getElPagination.prevText"
+                :next-text="getElPagination.nextText"
+                :disabled="getElPagination.disabled"
+                :hide-on-single-page="getElPagination.hideOnSinglePage"
+                @size-change="getElPagination.onSizeChange"
+                @current-change="getElPagination.onCurrentChange"
+                @prev-click="getElPagination.onPrevClick"
+                @next-click="getElPagination.onNextClick"
             ></Pagination>
         </Row>
     </div>
@@ -58,10 +68,10 @@ export default {
         Pagination
     },
     computed: {
-        getPaginationConf() {
+        getElPagination() {
             const isObject = (obj) => Object.prototype.toString.call(obj) === "[object Object]"
-            if (!isObject(this.elPagination)) return this.elPaginationDef;
-            const config = Object.assign(this.elPaginationDef, this.elPagination);
+            if (!isObject(this.elPagination)) return this.elPaginationDefault
+            const config = Object.assign(this.elPaginationDefault, this.elPagination);
             this.$emit('update:elPagination', config);
             return config
         },
@@ -74,7 +84,6 @@ export default {
         },
         onSelectionChanged() {
             this.selectedRows = this.gridApi.getSelectedRows()
-            console.log(this.selectedRows)
         }
     },
     data() {
@@ -82,22 +91,21 @@ export default {
             selectedRows: [],
             gridApi: null,
             gridColumnApi: null,
-            elPaginationDef: {
+            elPaginationDefault: {
                 small: false,
                 background: true,
-                pageSize: 10,
+                pageSize: 50,
                 total: 0,
                 pageCount: undefined,
                 pagerCount: 7,
                 currentPage: 1,
                 layout: "total, sizes, prev, pager, next, jumper",
-                pageSizes: [10, 20, 30, 40, 50, 100],
+                pageSizes: [50, 100, 150, 200],
                 popperClass: undefined,
                 prevText: undefined,
                 nextText: undefined,
                 disabled: false,
                 hideOnSinglePage: false,
-                position: "end",
                 onSizeChange: () => { },
                 onCurrentChange: () => { },
                 onPrevClick: () => { },
@@ -108,8 +116,36 @@ export default {
     props: {
         elPagination: {
             type: [Object, Boolean],
-            default: true,
+            default: false,
         },
+        suppressRowClickSelection: {
+            type: Boolean,
+            default: false,
+        },//禁止点击行选择
+        suppressCopyRowsToClipboard: {
+            type: Boolean,
+            default: true,
+        },//禁用行复制
+        suppressDragLeaveHidesColumns: {
+            type: Boolean,
+            default: true,
+        },//禁止隐藏列
+        rowSelection: {
+            type: String,
+            default: "multiple"
+        },//多行选择
+        rowDragManaged: {
+            type: Boolean,
+            default: true,
+        },//在托管拖动中，网格负责在拖动行时重新排列行
+        animateRows: {
+            type: Boolean,
+            default: true,
+        },//启用行动画
+        maintainColumnOrder: {
+            type: Boolean,
+            default: true,
+        },//顺序都保证与定义的顺序相匹配
         localeText: {
             type: Object,
             default: () => AG_GRID_LOCALE_CN,
@@ -124,26 +160,25 @@ export default {
         },//启用填充
         undoRedoCellEditing: {
             type: Boolean,
-            default: true,
+            default: false,
         },//启用撤消
         undoRedoCellEditingLimit: {
             type: Number,
-            default: 5,
+            default: 10,
         },//撤销次数
         enableCellChangeFlash: {
             type: Boolean,
             default: true,
-        },//数据更改后让单元格闪烁
+        }, //数据更改后让单元格闪烁
         enableBrowserTooltips: {
             type: Boolean,
             default: true,
-        },//浏览器提示
+        }, //浏览器提示
         defaultColDef: {
             type: Object,
             default: () => {
                 return {
-                    flex: 1,
-                    minWidth: 150,
+                    // width: 80,
                     editable: true,//默认可编辑
                     filter: true,//默认可筛选
                     sortable: true,//默认可排序
@@ -155,3 +190,20 @@ export default {
     },
 }
 </script>
+<style scoped>
+.ag-theme-balham ::v-deep .ag-body-viewport .disabled {
+    background: gray;
+    color: #fff;
+}
+.el-pagination__selected {
+    font-size: 13px;
+    color: rgb(96, 98, 102);
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: 400;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+</style>

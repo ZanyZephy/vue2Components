@@ -4,8 +4,6 @@
       :style="{ width: '100%', height: ' 500px' }"
       :columnDefs="carMain"
       :rowData="rowData"
-      rowSelection="multiple"
-      :suppressRowClickSelection="true"
       :elPagination.sync="pagination"
       @grid-ready="onGridReady"
     ></ATable>
