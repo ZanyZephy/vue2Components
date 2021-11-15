@@ -14,6 +14,7 @@ import CellDatePicker from './Editor/DatePicker/index.vue'
 import CellCheckBox from './Editor/CheckBox/index.vue'
 import CellCheckBoxRender from './Editor/CheckBox/render.vue'
 import CellDialog from './Editor/DTable/index.vue'
+import YearSelect from './Editor/YearSelect/index.vue'
 export default {
     inheritAttrs: false,
     name: "ATable",
@@ -22,7 +23,8 @@ export default {
         CellDatePicker,
         CellCheckBox,
         CellCheckBoxRender,
-        CellDialog
+        CellDialog,
+        YearSelect
     },
     data() {
         return {
@@ -30,7 +32,8 @@ export default {
                 CellDatePicker,
                 CellCheckBox,
                 CellCheckBoxRender,
-                CellDialog
+                CellDialog,
+                YearSelect
             ],
         }
     },

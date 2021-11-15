@@ -69,6 +69,7 @@ export const carMain = [
       {
         headerName: "名称⭐",
         field: "outletsName",
+        cellEditor: "CellDatePicker",
       },
     ],
   },
@@ -78,6 +79,7 @@ export const carMain = [
       {
         headerName: "名称⭐",
         field: "carAreaName",
+        cellEditor:"YearSelect",
       },
     ],
   },

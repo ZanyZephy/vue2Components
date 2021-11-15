@@ -21,6 +21,7 @@
       :suppressCopyRowsToClipboard="suppressCopyRowsToClipboard"
       :suppressDragLeaveHidesColumns="suppressDragLeaveHidesColumns"
       @grid-ready="onGridReady"
+      :stopEditingWhenCellsLoseFocus="true"
       @selectionChanged="onSelectionChanged"
     ></AgGridVue>
     <!-- 分页 -->

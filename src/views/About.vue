@@ -13,7 +13,7 @@
 
 <script>
 import ATable from "@/components/ATable/index.vue";
-import { carMain } from './index'
+import { carMain } from "./index";
 export default {
   components: {
     ATable,
@@ -24,30 +24,28 @@ export default {
         pageSize: 10,
         currentPage: 1,
         onCurrentChange: (e) => {
-          console.log(e)
-        }
+          console.log(e);
+        },
       },
       carMain,
       rowData: [],
     };
   },
   async beforeMount() {
-
     this.$nextTick(() => {
-      console.log(this.gridApi)
-      console.log(this.columnApi)
-    })
+      console.log(this.gridApi);
+      console.log(this.columnApi);
+    });
     this.rowData = await this.getRows();
-
   },
   methods: {
     onGridReady(params) {
-      console.log(params)
+      console.log(params);
       this.gridApi = params.api;
       this.columnApi = params.columnApi;
-      this.columnApi.getColumn('billState').colDef.refData = {
-        1: '小猪猪'
-      }
+      this.columnApi.getColumn("billState").colDef.refData = {
+        1: "小猪猪",
+      };
     },
     getBillStateMap() {
       return new Promise((resolve, reject) => {
@@ -59,9 +57,10 @@ export default {
       });
     },
     onChange() {
-      console.log(this.rowData)
-      console.log(this.pagination.currentPage)
-      console.log(this.pagination.pageSize)
+      this.gridApi.stopEditing();
+      console.log(this.rowData);
+      console.log(this.pagination.currentPage);
+      console.log(this.pagination.pageSize);
     },
     getRows() {
       return new Promise((resolve, reject) => {
@@ -73,15 +72,15 @@ export default {
                 buyer: "小猪猪",
               },
               carSourceName: "车场",
-              channelName: 1
+              channelName: 1,
             };
           });
-          resolve(list)
-        }, 2000)
-      })
+          resolve(list);
+        }, 2000);
+      });
     },
     onCellValueChanged(e) {
-      console.log(e)
+      console.log(e);
     },
   },
 };
